@@ -1,3 +1,50 @@
+/*----------
+Variables
+-------------*/
+/*----------
+Mixins
+------------*/
+/*----------
+Main
+------------*/
+.main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+}
+.main-title {
+  text-align: center;
+}
 .display-title {
-	text-transform: capitalize;
+  text-transform: capitalize;
+}
+.time-set-panel {
+  flex-direction: row;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+}
+.controls {
+  flex-direction: column;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  width: 75px;
+  margin: 0 10px;
+}
+.controls-btn {
+  border: none;
+  background-color: inherit;
+  font-size: 24px;
+}
+.controls-input {
+  border: none;
+  background-color: inherit;
+  width: 20px;
+  text-align: center;
+}
+.display {
+  text-align: center;
 }

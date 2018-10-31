@@ -1,0 +1,65 @@
+/*----------
+Variables
+-------------*/
+@text-transform: capitalize;
+
+/*----------
+Mixins
+------------*/
+.centered-block() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.transparent() {
+	border: none;
+	background-color: inherit;
+}
+.flex(column; @justify-content: stretch; @align-items: center) {
+	flex-direction: column;
+}
+.flex(row; @justify-content: stretch; @align-items: center) {
+	flex-direction: row;
+}
+.flex(@_; @justify-content: stretch; @align-items: center) {
+	display: flex;
+	justify-content: @justify-content;
+	align-items: @align-items;
+}
+
+/*----------
+Main
+------------*/
+.main {
+	.centered-block();
+	width: auto;
+}
+
+.main-title {
+	text-align: center;
+}
+
+.display-title {
+	text-transform: @text-transform;
+}
+.time-set-panel {
+	.flex(row);
+}
+.controls {
+	.flex(column);
+	width: 75px;
+	margin: 0 10px;
+}
+.controls-btn {
+	.transparent();
+	font-size: 24px;
+}
+.controls-input {
+	.transparent();
+	width: 20px;
+	text-align: center;
+}
+.display {
+	text-align: center;
+}
