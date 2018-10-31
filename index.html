@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="style.css">
+	<title>Pomodoro Clock</title>
+</head>
+<body>
+		<div id="root">
+				<page-title :title="title"></page-title>
+				<set-counter :value="pause" v-on:increase-time="pause++" v-on:decrease-time="pause--">Break Length</set-counter>
+				<set-counter :value="session" v-on:increase-time="session++" v-on:decrease-time="minutes--">Session Length</set-counter>
+				<clock-display :session-length="session" :pause-length="pause"><clock-display>
+			</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
