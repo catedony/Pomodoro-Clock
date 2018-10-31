@@ -1,6 +1,6 @@
 Vue.component('page-title', {
 	props: ['title'],
-	template: '<h1 class="page-title">{{title}}</h1>'
+	template: '<h1 class="main-title">{{title}}</h1>'
 });
 
 Vue.component('set-counter', {
@@ -18,11 +18,11 @@ Vue.component('set-counter', {
 			this.time > 1 ? this.time-- : this.time;
 		},
 	},
-	template: `<div>
+	template: `<div class="controls">
 			<h2 class="controls-title"><slot></slot></h2>
-			<button class="controls-btn" @click="decreaseTime" @click="$emit('decrease-time')">-</button>
+			<button class="controls-btn" @click="increaseTime" @click="$emit('increase-time')"><i class="fas fa-caret-up"></i></button>
 			<input class="controls-input" type="text" :value="time" disabled>
-			<button class="controls-btn" @click="increaseTime" @click="$emit('increase-time')">+</button>
+			<button class="controls-btn" @click="decreaseTime" @click="$emit('decrease-time')"><i class="fas fa-caret-down"></i></button>
     </div>`
 })
 
@@ -82,14 +82,14 @@ Vue.component('clock-display', {
 			this.period = 'session';
 		}
 	},
-	template: `<div>
+	template: `<div class="display">
 			<h2 class="display-title">{{period}}</h2>
 			<div class="display-digits">
 			<span>{{display}}</span>:<span>{{seconds}}</span>
 			</div>
-			<button class="display-btn" @click="startSession">Start</button>
-			<button class="display-btn" @click="stopCounting">Pause</button>
-			<button class="display-btn" @click="restartCounting">Restart</button>
+			<button class="display-btn" @click="startSession"><i class="fas fa-play"></i></button>
+			<button class="display-btn" @click="stopCounting"><i class="fas fa-pause"></i></button>
+			<button class="display-btn" @click="restartCounting"><i class="fas fa-redo-alt"></i></button>
 		</div>`
 })
 
